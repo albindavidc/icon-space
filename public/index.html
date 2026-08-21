@@ -1545,13 +1545,6 @@
         updateBuilderUI();
       }
 
-      // Automatically scroll to builder on initial load if no specific hash is present
-      if (!window.location.hash) {
-        setTimeout(() => {
-          document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-
       // Floating Arrow Scroll Logic
       const floatingArrow = document.getElementById('floatingArrow');
       window.addEventListener('scroll', () => {
