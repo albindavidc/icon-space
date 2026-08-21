@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Icons - Beautiful icons for your README</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              850: '#151e2e',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0f172a; color: #f8fafc; }
+    .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="border-b border-white/10 glass-panel sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-bold text-xl tracking-tight">
+        <span class="text-blue-400">Skill</span>Icons
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/albindavidc/skill-icons" target="_blank" class="text-sm text-slate-300 hover:text-white transition">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="py-20 px-4 text-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        Showcase your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Skills</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+        Beautifully designed icons for your GitHub README, personal website, or resume. Simple to use, highly customizable.
+      </p>
+      
+      <div class="flex justify-center mb-16">
+        <div class="glass-panel p-6 rounded-2xl inline-block shadow-2xl flex flex-col items-center">
+          <img src="/icons?i=ts,react,next,tailwind,x,whatsapp,linkedin,aws,linux,git,github,figma&theme=dark&perline=6" alt="Skill Icons Example" class="mx-auto select-none pointer-events-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" />
+          <a href="#directory" class="mt-8 px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium transition-all inline-flex items-center gap-2">
+            View Available Icons
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section class="max-w-4xl mx-auto px-4 py-16 border-t border-white/10">
+      <h2 class="text-3xl font-bold mb-8 text-center">How to use</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass-panel p-6 rounded-xl relative group">
+          <h3 class="font-semibold text-lg mb-4 text-blue-400">1. Markdown Format</h3>
+          <p class="text-slate-400 text-sm mb-4">Simply add an image tag to your README file and pass the icon names in the <code class="bg-white/10 px-1 py-0.5 rounded text-white">i</code> parameter.</p>
+          <div class="bg-black/50 p-4 rounded-lg overflow-x-auto border border-white/5 relative">
+            <code class="text-sm text-pink-300 whitespace-nowrap">[![My Skills](https://your-domain.com/icons?i=js,html,css)](https://skillicons.dev)</code>
+          </div>
+        </div>
+        
+        <div class="glass-panel p-6 rounded-xl relative group">
+          <h3 class="font-semibold text-lg mb-4 text-emerald-400">2. HTML Format</h3>
+          <p class="text-slate-400 text-sm mb-4">If you prefer HTML, use the img tag. Great for personal websites and portfolios.</p>
+          <div class="bg-black/50 p-4 rounded-lg overflow-x-auto border border-white/5 relative">
+            <code class="text-sm text-pink-300 whitespace-nowrap">&lt;a href="https://skillicons.dev"&gt;<br/>&nbsp;&nbsp;&lt;img src="https://your-domain.com/icons?i=js,html,css" /&gt;<br/>&lt;/a&gt;</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Builder / Icon Directory -->
+    <section class="max-w-6xl mx-auto px-4 py-16 border-t border-white/10" id="directory">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-4">Icon Directory</h2>
+        <p class="text-slate-400">Search from our growing library of icons. Click any icon to copy its name.</p>
+      </div>
+
+      <div class="mb-8 max-w-md mx-auto">
+        <input type="text" id="searchInput" placeholder="Search icons (e.g. react, python)..." class="w-full bg-slate-800 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition shadow-inner">
+      </div>
+
+      <div id="iconGridContainer" class="space-y-12">
+        <!-- Categories injected via JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-8 text-center text-slate-500 text-sm">
+    <p>Powered by Google AI Studio. Based on the skill-icons repository.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('iconGridContainer');
+      const search = document.getElementById('searchInput');
+      let allIcons = [];
+
+      const categoriesMap = {
+        "Languages": ['javascript', 'typescript', 'python', 'c', 'cpp', 'cs', 'html', 'css', 'golang', 'rust', 'java', 'kotlin', 'swift', 'php', 'ruby', 'dart', 'haskell', 'lua', 'r', 'scala', 'v', 'zig', 'webassembly', 'clojure', 'elixir', 'fortran', 'ocaml', 'perl', 'solidity', 'vala', 'verilog', 'nim'],
+        "Frontend & UI": ['react', 'vuejs', 'angular', 'svelte', 'nextjs', 'nuxtjs', 'solidjs', 'lit', 'alpinejs', 'htmx', 'gatsby', 'jquery', 'bootstrap', 'tailwindcss', 'materialui', 'vuetify', 'styledcomponents', 'sass', 'less', 'windicss', 'emotion', 'redux', 'pinia', 'reactivex'],
+        "Backend & APIs": ['nodejs', 'expressjs', 'nestjs', 'django', 'flask', 'fastapi', 'spring', 'laravel', 'actix', 'apollo', 'graphql', 'elysia', 'ktor', 'rails', 'remix', 'symfony'],
+        "Databases & Cloud": ['postgresql', 'mysql', 'mongodb', 'redis', 'sqlite', 'dynamodb', 'firebase', 'supabase', 'appwrite', 'gcp', 'aws', 'azure', 'cloudflare', 'heroku', 'vercel', 'netlify', 'planetscale', 'kubernetes', 'docker', 'nginx', 'kafka', 'rabbitmq', 'cassandra', 'elasticsearch', 'prometheus', 'terraform', 'openshift'],
+        "Tools & IDEs": ['git', 'github', 'gitlab', 'bitbucket', 'vscode', 'webstorm', 'idea', 'linux', 'ubuntu', 'debian', 'arch', 'windows', 'apple', 'androidstudio', 'figma', 'photoshop', 'illustrator', 'premiere', 'aftereffects', 'bash', 'powershell', 'vim', 'neovim', 'npm', 'yarn', 'pnpm', 'bun', 'vite', 'vitest', 'jest', 'cypress', 'selenium', 'webpack', 'rollupjs'],
+        "Socials & Platforms": ['discord', 'twitter', 'x', 'instagram', 'linkedin', 'gmail', 'whatsapp', 'mastodon', 'devto', 'stackoverflow'],
+        "Other / Misc": []
+      };
+
+      try {
+        const res = await fetch('/api/icons');
+        allIcons = await res.json();
+        // Sort alphabetically
+        allIcons.sort((a, b) => a.localeCompare(b));
+        renderCategorized(allIcons);
+      } catch (err) {
+        console.error('Failed to load icons', err);
+        container.innerHTML = '<p class="text-red-400 text-center">Failed to load icons from API.</p>';
+      }
+
+      search.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allIcons.filter(name => name.toLowerCase().includes(query));
+        renderCategorized(filtered);
+      });
+
+      function renderCategorized(iconsToRender) {
+        container.innerHTML = '';
+        if(iconsToRender.length === 0) {
+          container.innerHTML = '<p class="text-slate-400 text-center py-10">No icons found matching your search.</p>';
+          return;
+        }
+
+        // Group the remaining icons
+        const grouped = {};
+        for(let key of Object.keys(categoriesMap)) {
+          grouped[key] = [];
+        }
+
+        iconsToRender.forEach(icon => {
+          let placed = false;
+          for(let [category, list] of Object.entries(categoriesMap)) {
+            if(category !== "Other / Misc" && list.includes(icon)) {
+              grouped[category].push(icon);
+              placed = true;
+              break;
+            }
+          }
+          if(!placed) {
+            grouped["Other / Misc"].push(icon);
+          }
+        });
+
+        // Render each category
+        for(let [category, items] of Object.entries(grouped)) {
+          if(items.length === 0) continue;
+
+          const section = document.createElement('div');
+          
+          const title = document.createElement('h3');
+          title.className = "text-xl font-semibold text-slate-200 mb-6 border-b border-white/10 pb-2";
+          title.innerText = category;
+          section.appendChild(title);
+
+          const grid = document.createElement('div');
+          grid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4";
+
+          items.forEach(name => {
+            const card = document.createElement('div');
+            card.className = 'glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition cursor-pointer group';
+            card.title = "Click to copy parameter: " + name;
+            card.onclick = () => {
+              navigator.clipboard.writeText(name);
+              const span = card.querySelector('span');
+              const originalText = span.innerText;
+              span.innerText = 'Copied!';
+              span.classList.add('text-emerald-400');
+              setTimeout(() => {
+                span.innerText = originalText;
+                span.classList.remove('text-emerald-400');
+              }, 1500);
+            };
+            
+            card.innerHTML = `
+              <img src="/icons?i=${name}&theme=dark" alt="${name}" class="w-12 h-12 group-hover:scale-110 transition-transform drop-shadow-lg" />
+              <span class="text-xs font-medium text-slate-300 truncate w-full text-center pointer-events-none">${name}</span>
+            `;
+            grid.appendChild(card);
+          });
+
+          section.appendChild(grid);
+          container.appendChild(section);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

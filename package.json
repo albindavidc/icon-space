@@ -1,0 +1,16 @@
+{
+	"name": "skill-icons",
+	"version": "1.0.0",
+	"main": "server.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "node build.js && node server.js",
+		"build": "node build.js"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	},
+	"devDependencies": {
+		"prettier": "^2.5.1"
+	}
+}
