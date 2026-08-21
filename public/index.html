@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +16,13 @@
             sans: ['Inter', 'sans-serif'],
           },
           colors: {
-            slate: {
-              850: '#151e2e',
-              900: '#0f172a',
+            app: {
+              bg: '#0A0B0F',
+              surface: '#14161C',
+              elevated: '#1A1D24',
+              accent1: '#3b82f6',
+              accent2: '#8b5cf6',
+              accent3: '#14b8a6',
             }
           }
         }
@@ -26,115 +30,144 @@
     }
   </script>
   <style>
-    body { background-color: #0f172a; color: #f8fafc; }
-    .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    body { background-color: #0A0B0F; color: #F3F4F6; }
+    
+    /* Surfaces */
+    .surface { background: #14161C; border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 4px 24px -4px rgba(0,0,0,0.5); }
+    .surface-elevated { background: #1A1D24; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 8px 32px -4px rgba(0,0,0,0.6); }
+    
+    /* Nav & Blur */
+    .glass-nav { background: rgba(10, 11, 15, 0.7); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.03); }
+    
+    /* Gradients */
+    .gradient-text { background: linear-gradient(135deg, #3b82f6, #8b5cf6, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-bg { background: linear-gradient(135deg, #3b82f6, #8b5cf6, #14b8a6); }
+    
+    /* Segmented Control */
+    .segmented-control { background: #0A0B0F; border: 1px solid rgba(255,255,255,0.05); padding: 4px; border-radius: 12px; }
+    .segmented-btn { border-radius: 8px; transition: all 0.2s ease; font-weight: 500; }
+    .segmented-btn.active { background: #1A1D24; color: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); }
+    .segmented-btn.inactive { color: #9CA3AF; }
+    .segmented-btn.inactive:hover { color: #ffffff; }
+
+    /* Icon Cards */
+    .icon-card { background: rgba(20, 22, 28, 0.6); border: 1px solid rgba(255,255,255,0.02); transition: all 0.2s ease; }
+    .icon-card:hover { transform: translateY(-2px) scale(1.02); background: rgba(26, 29, 36, 0.8); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.05); }
+    .icon-card.selected { border-color: #8b5cf6; box-shadow: 0 0 15px rgba(139, 92, 246, 0.2); background: rgba(139, 92, 246, 0.05); }
   </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
   <!-- Navbar -->
-  <nav class="border-b border-white/10 glass-panel sticky top-0 z-50">
+  <nav class="glass-nav sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <div class="flex items-center gap-2 font-bold text-xl tracking-tight">
-        <span class="text-blue-400">Icon</span> Space
+        <span class="gradient-text">Icon</span> Space
       </div>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/albindavidc/skill-icons" target="_blank" class="text-sm text-slate-300 hover:text-white transition">GitHub</a>
+      <div class="flex items-center gap-6">
+        <a href="#builder" class="text-sm text-gray-400 hover:text-white transition hidden sm:inline-block">Builder</a>
+        <a href="#directory" class="text-sm text-gray-400 hover:text-white transition hidden sm:inline-block">Directory</a>
+        <a href="https://github.com/albindavidc/skill-icons" target="_blank" class="text-sm text-gray-400 hover:text-white transition">GitHub</a>
       </div>
     </div>
   </nav>
 
   <main class="flex-grow">
     <!-- Hero Section -->
-    <section class="py-20 px-4 text-center">
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-        Showcase your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Skills</span>
+    <section class="pt-12 pb-6 px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+        Showcase your <span class="gradient-text">Skills</span>
       </h1>
-      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+      <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-6">
         Beautifully designed icons for your GitHub README, personal website, or resume. Simple to use, highly customizable.
       </p>
       
-      <div class="flex justify-center mb-16">
-        <div class="glass-panel p-6 rounded-2xl inline-block shadow-2xl flex flex-col items-center">
-          <img src="/icons?i=ts,react,next,tailwind,x,whatsapp,linkedin,aws,linux,git,github,figma&theme=dark&perline=6" alt="Icon Space Example" class="mx-auto select-none pointer-events-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" />
-          <a href="#directory" class="mt-8 px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white font-medium transition-all inline-flex items-center gap-2">
-            View Available Icons
+      <div class="flex justify-center mb-4">
+        <div class="surface p-5 rounded-[2rem] inline-block flex flex-col items-center transform scale-90 sm:scale-100 origin-top">
+          <img src="/icons?i=ts,react,next,tailwind,x,whatsapp,linkedin,aws,linux,git,github,figma&theme=dark&perline=6" alt="Icon Space Example" class="mx-auto select-none pointer-events-none drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
+          <a href="#builder" class="mt-6 px-8 py-3 rounded-full gradient-bg shadow-[0_0_20px_rgba(139,92,246,0.25)] hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] text-white font-medium transition-all inline-flex items-center gap-2">
+            Open Icon Builder
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- Separator -->
+    <div class="w-full flex justify-center py-6">
+      <div class="h-px w-full max-w-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    </div>
+
     <!-- Interactive Builder -->
-    <section class="max-w-6xl mx-auto px-4 py-16 border-t border-white/10" id="builder">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold mb-4">Icon Builder</h2>
-        <p class="text-slate-400">Select icons from the directory below to configure and generate your link.</p>
+    <section class="max-w-6xl mx-auto px-4 py-8" id="builder">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tight mb-4">Icon Builder</h2>
+        <p class="text-gray-400">Select icons from the directory below to configure and generate your link.</p>
       </div>
       
       <div class="grid md:grid-cols-12 gap-8">
         <!-- Controls -->
-        <div class="md:col-span-5 glass-panel p-6 rounded-2xl flex flex-col gap-6">
-           <!-- Type & Size -->
+        <div class="md:col-span-5 surface p-6 rounded-2xl flex flex-col gap-6">
+           <!-- Type & Theme -->
            <div class="flex gap-4">
               <div class="flex-1">
-                <label class="block text-sm font-medium text-slate-300 mb-2">Type</label>
-                <div class="flex bg-slate-800 rounded-lg p-1 border border-white/5">
-                  <button id="typeSkillBtn" class="flex-1 py-1.5 rounded-md bg-slate-700 text-white text-xs sm:text-sm shadow-sm transition">Block</button>
-                  <button id="typeShieldBtn" class="flex-1 py-1.5 rounded-md text-slate-400 text-xs sm:text-sm hover:text-white transition">Inline</button>
+                <label class="block text-sm font-medium text-gray-400 mb-2">Type</label>
+                <div class="flex segmented-control">
+                  <button id="typeSkillBtn" class="flex-1 py-1.5 segmented-btn active text-xs sm:text-sm">Block</button>
+                  <button id="typeShieldBtn" class="flex-1 py-1.5 segmented-btn inactive text-xs sm:text-sm">Inline</button>
                 </div>
               </div>
               <div class="flex-1">
-                <label class="block text-sm font-medium text-slate-300 mb-2">Size (px)</label>
-                <input type="number" id="sizeInput" value="48" min="16" max="256" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-white text-sm outline-none focus:border-blue-500 transition">
+                <label class="block text-sm font-medium text-gray-400 mb-2">Theme</label>
+                <div class="flex segmented-control">
+                  <button id="themeDarkBtn" class="flex-1 py-1.5 segmented-btn active text-sm">Dark</button>
+                  <button id="themeLightBtn" class="flex-1 py-1.5 segmented-btn inactive text-sm">Light</button>
+                </div>
               </div>
            </div>
 
-           <!-- Theme & Per Line -->
+           <!-- Size & Per Line -->
            <div class="flex gap-4">
               <div class="flex-1">
-                <label class="block text-sm font-medium text-slate-300 mb-2">Theme</label>
-                <div class="flex bg-slate-800 rounded-lg p-1 border border-white/5">
-                  <button id="themeDarkBtn" class="flex-1 py-1.5 rounded-md bg-slate-700 text-white text-sm shadow-sm transition">Dark</button>
-                  <button id="themeLightBtn" class="flex-1 py-1.5 rounded-md text-slate-400 text-sm hover:text-white transition">Light</button>
-                </div>
+                <label class="block text-sm font-medium text-gray-400 mb-2">Size (px)</label>
+                <input type="number" id="sizeInput" value="48" min="16" max="256" class="w-full bg-[#0A0B0F] border border-white/5 rounded-xl px-3 py-1.5 text-gray-200 text-sm outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition">
               </div>
               <div class="flex-1" id="perLineContainer">
-                <label class="block text-sm font-medium text-slate-300 mb-2">Icons Per Line</label>
-                <input type="number" id="perLineInput" value="15" min="1" max="50" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-white text-sm outline-none focus:border-blue-500 transition">
+                <label class="block text-sm font-medium text-gray-400 mb-2">Icons Per Line</label>
+                <input type="number" id="perLineInput" value="15" min="1" max="50" class="w-full bg-[#0A0B0F] border border-white/5 rounded-xl px-3 py-1.5 text-gray-200 text-sm outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition">
               </div>
            </div>
            
            <!-- Selected Icons -->
            <div class="flex-1 flex flex-col min-h-[150px]">
               <div class="flex justify-between items-center mb-2">
-                <label class="block text-sm font-medium text-slate-300">Selected Icons (<span id="selectedCount">0</span>)</label>
+                <label class="block text-sm font-medium text-gray-400">Selected Icons (<span id="selectedCount" class="text-gray-200">0</span>)</label>
                 <button id="clearBtn" class="text-xs text-red-400 hover:text-red-300 hidden transition">Clear All</button>
               </div>
-              <div id="selectedIconsBox" class="flex-1 bg-slate-800/50 border border-slate-700 rounded-xl p-4 flex flex-wrap gap-2 content-start overflow-y-auto max-h-[200px]">
-                <span class="text-slate-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>
+              <div id="selectedIconsBox" class="flex-1 bg-[#0A0B0F] border border-white/5 rounded-xl p-4 flex flex-wrap gap-2 content-start overflow-y-auto max-h-[200px]">
+                <span class="text-gray-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>
               </div>
            </div>
         </div>
         
         <!-- Preview & Export -->
-        <div class="md:col-span-7 glass-panel p-6 rounded-2xl flex flex-col gap-6">
-           <label class="block text-sm font-medium text-slate-300">Live Preview</label>
-           <div class="bg-[#121826] rounded-xl border border-white/5 flex flex-wrap gap-2 items-center justify-center p-6 min-h-[160px] overflow-x-auto overflow-y-hidden transition-colors" id="previewContainer">
-             <img id="builderPreview" src="/icons?i=js,ts,react&theme=dark" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">
+        <div class="md:col-span-7 surface p-6 rounded-2xl flex flex-col gap-6">
+           <label class="block text-sm font-medium text-gray-400">Live Preview</label>
+           <div class="surface-elevated rounded-xl flex flex-wrap gap-2 items-center justify-center p-6 min-h-[160px] overflow-x-auto overflow-y-hidden transition-colors relative" id="previewContainer">
+             <img id="builderPreview" src="/icons?i=javascript,typescript,react&theme=dark" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">
            </div>
            
            <!-- Export -->
            <div>
               <div class="flex gap-2 mb-2">
-                 <button class="export-tab active text-sm px-3 py-1.5 rounded-t-lg bg-slate-900 border-t border-l border-r border-slate-700 text-blue-400 font-medium" data-type="markdown">Markdown</button>
-                 <button class="export-tab text-sm px-3 py-1.5 rounded-t-lg text-slate-400 hover:text-slate-200 transition font-medium border-b border-transparent" data-type="html">HTML</button>
-                 <button class="export-tab text-sm px-3 py-1.5 rounded-t-lg text-slate-400 hover:text-slate-200 transition font-medium border-b border-transparent" data-type="url">URL</button>
+                 <button class="export-tab active text-sm px-4 py-1.5 rounded-t-xl bg-[#0A0B0F] border-t border-l border-r border-white/5 text-violet-400 font-medium" data-type="markdown">Markdown</button>
+                 <button class="export-tab text-sm px-4 py-1.5 rounded-t-xl text-gray-500 hover:text-gray-300 transition font-medium border-b border-transparent" data-type="html">HTML</button>
+                 <button class="export-tab text-sm px-4 py-1.5 rounded-t-xl text-gray-500 hover:text-gray-300 transition font-medium border-b border-transparent" data-type="url">URL</button>
               </div>
-              <div class="relative bg-slate-900 border border-slate-700 rounded-b-lg rounded-tr-lg p-1">
-                <textarea id="exportCode" readonly class="w-full h-24 bg-transparent p-3 text-sm text-emerald-400 font-mono resize-none focus:outline-none selection:bg-emerald-900/50">Select icons first...</textarea>
-                <button id="copyExportBtn" class="absolute top-3 right-3 p-2 bg-slate-800 hover:bg-slate-700 rounded-md border border-slate-600 transition group" title="Copy to clipboard">
-                  <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              <div class="relative bg-[#0A0B0F] border border-white/5 rounded-b-xl rounded-tr-xl p-1">
+                <textarea id="exportCode" readonly class="w-full h-28 bg-transparent p-4 text-sm text-gray-300 font-mono resize-none focus:outline-none selection:bg-violet-900/50">Select icons first...</textarea>
+                <button id="copyExportBtn" class="absolute top-4 right-4 p-2 surface hover:surface-elevated rounded-md transition group" title="Copy to clipboard">
+                  <svg class="w-4 h-4 text-gray-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                 </button>
               </div>
            </div>
@@ -142,24 +175,24 @@
       </div>
     </section>
 
-    <!-- Interactive Builder / Icon Directory -->
-    <section class="max-w-6xl mx-auto px-4 py-16 border-t border-white/10" id="directory">
-      <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold mb-4">Icon Directory</h2>
-        <p class="text-slate-400">Search from our growing library of icons. Click any icon to copy its name.</p>
+    <!-- Icon Directory -->
+    <section class="max-w-6xl mx-auto px-4 py-20 border-t border-white/5" id="directory">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tight mb-4">Icon Directory</h2>
+        <p class="text-gray-400">Search from our growing library of icons. Click any icon to add it to your builder.</p>
       </div>
 
-      <div class="mb-8 max-w-md mx-auto">
-        <input type="text" id="searchInput" placeholder="Search icons (e.g. react, python)..." class="w-full bg-slate-800 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition shadow-inner">
+      <div class="mb-10 max-w-lg mx-auto">
+        <input type="text" id="searchInput" placeholder="Search icons (e.g. react, python)..." class="w-full bg-[#0A0B0F] border border-white/5 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition shadow-inner">
       </div>
 
-      <div id="iconGridContainer" class="space-y-12">
+      <div id="iconGridContainer" class="space-y-16">
         <!-- Categories injected via JS -->
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 py-8 text-center text-slate-500 text-sm">
+  <footer class="border-t border-white/5 py-12 text-center text-gray-500 text-sm">
     <p>Powered by Google AI Studio. Based on the skill-icons repository, remixed into Icon Space.</p>
   </footer>
 
@@ -1233,12 +1266,12 @@
         }
 
         if (builderState.icons.length === 0) {
-          selectedIconsBox.innerHTML = '<span class="text-slate-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>';
+          selectedIconsBox.innerHTML = '<span class="text-gray-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>';
         } else {
           selectedIconsBox.innerHTML = builderState.icons.map(name => `
-            <div class="flex items-center gap-1 bg-slate-700 hover:bg-slate-600 text-slate-200 px-2 py-1 rounded cursor-pointer transition text-xs border border-slate-600 shadow-sm" onclick="toggleIcon('${name}')" title="Remove">
+            <div class="flex items-center gap-2 surface hover:surface-elevated text-gray-200 px-3 py-1.5 rounded-lg cursor-pointer transition text-xs shadow-sm" onclick="toggleIcon('${name}')" title="Remove">
               <span>${name}</span>
-              <svg class="w-3 h-3 text-slate-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              <svg class="w-3 h-3 text-gray-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </div>
           `).join('');
         }
@@ -1246,11 +1279,13 @@
         document.querySelectorAll('.icon-card').forEach(card => {
           const name = card.dataset.name;
           if (builderState.icons.includes(name)) {
-            card.classList.add('ring-2', 'ring-blue-500', 'bg-white/10');
-            card.querySelector('.check-badge').classList.remove('hidden');
+            card.classList.add('selected');
+            card.querySelector('.check-badge').classList.remove('opacity-0', 'scale-75');
+            card.querySelector('.check-badge').classList.add('opacity-100', 'scale-100');
           } else {
-            card.classList.remove('ring-2', 'ring-blue-500', 'bg-white/10');
-            card.querySelector('.check-badge').classList.add('hidden');
+            card.classList.remove('selected');
+            card.querySelector('.check-badge').classList.add('opacity-0', 'scale-75');
+            card.querySelector('.check-badge').classList.remove('opacity-100', 'scale-100');
           }
         });
 
@@ -1271,11 +1306,12 @@
         // Render Preview
         if (builderState.icons.length === 0) {
           if (builderState.type === 'skill') {
-            previewContainer.innerHTML = `<img src="/icons?i=js,ts,react&theme=${builderState.theme}&size=${builderState.size}" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">`;
+            previewContainer.innerHTML = `<img src="/icons?i=javascript,typescript,react&theme=${builderState.theme}&size=${builderState.size}" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">`;
           } else {
             previewContainer.innerHTML = `
-              <img src="${getShieldUrl('js', builderState.theme)}" height="${builderState.size}" class="opacity-20 transition-opacity duration-300" />
-              <img src="${getShieldUrl('ts', builderState.theme)}" height="${builderState.size}" class="opacity-20 transition-opacity duration-300" />
+              <img src="${getShieldUrl('javascript', builderState.theme)}" height="${builderState.size}" class="opacity-20 transition-opacity duration-300" />
+              <img src="${getShieldUrl('typescript', builderState.theme)}" height="${builderState.size}" class="opacity-20 transition-opacity duration-300" />
+              <img src="${getShieldUrl('react', builderState.theme)}" height="${builderState.size}" class="opacity-20 transition-opacity duration-300" />
             `;
           }
         } else {
@@ -1289,11 +1325,9 @@
         }
         
         if(builderState.theme === 'light') {
-          previewContainer.classList.remove('bg-[#121826]');
-          previewContainer.classList.add('bg-slate-200');
+          previewContainer.style.background = '#F3F4F6';
         } else {
-          previewContainer.classList.remove('bg-slate-200');
-          previewContainer.classList.add('bg-[#121826]');
+          previewContainer.style.background = '';
         }
 
         updateExportCode();
@@ -1335,23 +1369,19 @@
       // Builder Event Listeners
       typeSkillBtn.addEventListener('click', () => {
         builderState.type = 'skill';
-        typeSkillBtn.classList.replace('text-slate-400', 'text-white');
-        typeSkillBtn.classList.replace('hover:text-white', 'bg-slate-700');
-        typeSkillBtn.classList.add('shadow-sm');
-        typeShieldBtn.classList.replace('text-white', 'text-slate-400');
-        typeShieldBtn.classList.replace('bg-slate-700', 'hover:text-white');
-        typeShieldBtn.classList.remove('shadow-sm');
+        typeSkillBtn.classList.add('active');
+        typeSkillBtn.classList.remove('inactive');
+        typeShieldBtn.classList.add('inactive');
+        typeShieldBtn.classList.remove('active');
         updateBuilderUI();
       });
 
       typeShieldBtn.addEventListener('click', () => {
         builderState.type = 'shield';
-        typeShieldBtn.classList.replace('text-slate-400', 'text-white');
-        typeShieldBtn.classList.replace('hover:text-white', 'bg-slate-700');
-        typeShieldBtn.classList.add('shadow-sm');
-        typeSkillBtn.classList.replace('text-white', 'text-slate-400');
-        typeSkillBtn.classList.replace('bg-slate-700', 'hover:text-white');
-        typeSkillBtn.classList.remove('shadow-sm');
+        typeShieldBtn.classList.add('active');
+        typeShieldBtn.classList.remove('inactive');
+        typeSkillBtn.classList.add('inactive');
+        typeSkillBtn.classList.remove('active');
         updateBuilderUI();
       });
 
@@ -1362,25 +1392,22 @@
           updateBuilderUI();
         }
       });
+      
       themeDarkBtn.addEventListener('click', () => {
         builderState.theme = 'dark';
-        themeDarkBtn.classList.replace('text-slate-400', 'text-white');
-        themeDarkBtn.classList.replace('hover:text-white', 'bg-slate-700');
-        themeDarkBtn.classList.add('shadow-sm');
-        themeLightBtn.classList.replace('text-white', 'text-slate-400');
-        themeLightBtn.classList.replace('bg-slate-700', 'hover:text-white');
-        themeLightBtn.classList.remove('shadow-sm');
+        themeDarkBtn.classList.add('active');
+        themeDarkBtn.classList.remove('inactive');
+        themeLightBtn.classList.add('inactive');
+        themeLightBtn.classList.remove('active');
         updateBuilderUI();
       });
 
       themeLightBtn.addEventListener('click', () => {
         builderState.theme = 'light';
-        themeLightBtn.classList.replace('text-slate-400', 'text-white');
-        themeLightBtn.classList.replace('hover:text-white', 'bg-slate-700');
-        themeLightBtn.classList.add('shadow-sm');
-        themeDarkBtn.classList.replace('text-white', 'text-slate-400');
-        themeDarkBtn.classList.replace('bg-slate-700', 'hover:text-white');
-        themeDarkBtn.classList.remove('shadow-sm');
+        themeLightBtn.classList.add('active');
+        themeLightBtn.classList.remove('inactive');
+        themeDarkBtn.classList.add('inactive');
+        themeDarkBtn.classList.remove('active');
         updateBuilderUI();
       });
 
@@ -1401,11 +1428,11 @@
         tab.addEventListener('click', (e) => {
           builderState.exportType = e.target.dataset.type;
           exportTabs.forEach(t => {
-            t.classList.remove('bg-slate-900', 'border-t', 'border-l', 'border-r', 'border-slate-700', 'text-blue-400');
-            t.classList.add('border-b', 'border-transparent', 'text-slate-400', 'hover:text-slate-200');
+            t.classList.remove('bg-[#0A0B0F]', 'border-t', 'border-l', 'border-r', 'border-white/5', 'text-violet-400');
+            t.classList.add('border-b', 'border-transparent', 'text-gray-500', 'hover:text-gray-300');
           });
-          e.target.classList.add('bg-slate-900', 'border-t', 'border-l', 'border-r', 'border-slate-700', 'text-blue-400');
-          e.target.classList.remove('border-b', 'border-transparent', 'text-slate-400', 'hover:text-slate-200');
+          e.target.classList.add('bg-[#0A0B0F]', 'border-t', 'border-l', 'border-r', 'border-white/5', 'text-violet-400');
+          e.target.classList.remove('border-b', 'border-transparent', 'text-gray-500', 'hover:text-gray-300');
           updateExportCode();
         });
       });
@@ -1455,7 +1482,7 @@
       function renderCategorized(iconsToRender) {
         container.innerHTML = '';
         if(iconsToRender.length === 0) {
-          container.innerHTML = '<p class="text-slate-400 text-center py-10">No icons found matching your search.</p>';
+          container.innerHTML = '<p class="text-gray-400 text-center py-10">No icons found matching your search.</p>';
           return;
         }
 
@@ -1486,7 +1513,7 @@
           const section = document.createElement('div');
           
           const title = document.createElement('h3');
-          title.className = "text-xl font-semibold text-slate-200 mb-6 border-b border-white/10 pb-2";
+          title.className = "text-xl font-semibold text-gray-200 mb-6 border-b border-white/5 pb-2";
           title.innerText = category;
           section.appendChild(title);
 
@@ -1495,17 +1522,17 @@
 
           items.forEach(name => {
             const card = document.createElement('div');
-            card.className = 'icon-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition cursor-pointer group relative';
+            card.className = 'icon-card p-4 rounded-xl flex flex-col items-center justify-center gap-3 transition cursor-pointer group relative';
             card.dataset.name = name;
             card.title = "Click to add: " + name;
             card.onclick = () => window.toggleIcon(name);
             
             card.innerHTML = `
-              <div class="check-badge hidden absolute -top-2 -right-2 bg-blue-500 text-white rounded-full p-1 shadow-lg">
+              <div class="check-badge opacity-0 scale-75 transition-all duration-200 absolute -top-2 -right-2 gradient-bg text-white rounded-full p-1 shadow-[0_0_10px_rgba(139,92,246,0.4)] z-10">
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
               </div>
               <img src="/icons?i=${name}&theme=dark" alt="${name}" class="w-12 h-12 group-hover:scale-110 transition-transform drop-shadow-lg" loading="lazy" />
-              <span class="text-xs font-medium text-slate-300 truncate w-full text-center pointer-events-none">${name}</span>
+              <span class="text-xs font-medium text-gray-400 truncate w-full text-center pointer-events-none group-hover:text-gray-200 transition-colors">${name}</span>
             `;
             grid.appendChild(card);
           });
@@ -1517,7 +1544,32 @@
         // Ensure previously selected items stay visually selected after re-render (e.g., from search)
         updateBuilderUI();
       }
+
+      // Automatically scroll to builder on initial load if no specific hash is present
+      if (!window.location.hash) {
+        setTimeout(() => {
+          document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+
+      // Floating Arrow Scroll Logic
+      const floatingArrow = document.getElementById('floatingArrow');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          floatingArrow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+          floatingArrow.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        } else {
+          floatingArrow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+          floatingArrow.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        }
+      });
+      
     });
   </script>
+
+  <!-- Floating Scroll to Builder Button -->
+  <a href="#builder" id="floatingArrow" class="fixed bottom-6 right-6 p-3 rounded-full gradient-bg text-white shadow-[0_0_20px_rgba(139,92,246,0.25)] opacity-0 pointer-events-none translate-y-4 transition-all duration-300 z-50 hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:-translate-y-1">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </a>
 </body>
 </html>
