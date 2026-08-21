@@ -4,6 +4,8 @@
 	"main": "server.js",
 	"license": "MIT",
 	"scripts": {
+		"postinstall": "node build.js",
+		"vercel-build": "node build.js",
 		"dev": "node build.js && node server.js",
 		"build": "node build.js"
 	},

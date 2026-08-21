@@ -9,3 +9,4 @@ for (const icon of iconsDir) {
 
 if (!fs.existsSync('./dist')) fs.mkdirSync('./dist');
 fs.writeFileSync('./dist/icons.json', JSON.stringify(icons));
+fs.writeFileSync('./built-icons.json', JSON.stringify(icons));
