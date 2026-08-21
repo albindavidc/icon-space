@@ -64,25 +64,79 @@
       </div>
     </section>
 
-    <!-- Usage Section -->
-    <section class="max-w-4xl mx-auto px-4 py-16 border-t border-white/10">
-      <h2 class="text-3xl font-bold mb-8 text-center">How to use</h2>
+    <!-- Interactive Builder -->
+    <section class="max-w-6xl mx-auto px-4 py-16 border-t border-white/10" id="builder">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-4">Icon Builder</h2>
+        <p class="text-slate-400">Select icons from the directory below to configure and generate your link.</p>
+      </div>
       
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="glass-panel p-6 rounded-xl relative group">
-          <h3 class="font-semibold text-lg mb-4 text-blue-400">1. Markdown Format</h3>
-          <p class="text-slate-400 text-sm mb-4">Simply add an image tag to your README file and pass the icon names in the <code class="bg-white/10 px-1 py-0.5 rounded text-white">i</code> parameter.</p>
-          <div class="bg-black/50 p-4 rounded-lg overflow-x-auto border border-white/5 relative">
-            <code class="text-sm text-pink-300 whitespace-nowrap">[![My Skills](https://icon-space.vercel.app/icons?i=js,html,css)](https://icon-space.vercel.app)</code>
-          </div>
+      <div class="grid md:grid-cols-12 gap-8">
+        <!-- Controls -->
+        <div class="md:col-span-5 glass-panel p-6 rounded-2xl flex flex-col gap-6">
+           <!-- Type & Size -->
+           <div class="flex gap-4">
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-slate-300 mb-2">Type</label>
+                <div class="flex bg-slate-800 rounded-lg p-1 border border-white/5">
+                  <button id="typeSkillBtn" class="flex-1 py-1.5 rounded-md bg-slate-700 text-white text-xs sm:text-sm shadow-sm transition">Skill Icons</button>
+                  <button id="typeShieldBtn" class="flex-1 py-1.5 rounded-md text-slate-400 text-xs sm:text-sm hover:text-white transition">Shields.io</button>
+                </div>
+              </div>
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-slate-300 mb-2">Size (px)</label>
+                <input type="number" id="sizeInput" value="48" min="16" max="256" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-white text-sm outline-none focus:border-blue-500 transition">
+              </div>
+           </div>
+
+           <!-- Theme & Per Line -->
+           <div class="flex gap-4">
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-slate-300 mb-2">Theme</label>
+                <div class="flex bg-slate-800 rounded-lg p-1 border border-white/5">
+                  <button id="themeDarkBtn" class="flex-1 py-1.5 rounded-md bg-slate-700 text-white text-sm shadow-sm transition">Dark</button>
+                  <button id="themeLightBtn" class="flex-1 py-1.5 rounded-md text-slate-400 text-sm hover:text-white transition">Light</button>
+                </div>
+              </div>
+              <div class="flex-1" id="perLineContainer">
+                <label class="block text-sm font-medium text-slate-300 mb-2">Icons Per Line</label>
+                <input type="number" id="perLineInput" value="15" min="1" max="50" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-white text-sm outline-none focus:border-blue-500 transition">
+              </div>
+           </div>
+           
+           <!-- Selected Icons -->
+           <div class="flex-1 flex flex-col min-h-[150px]">
+              <div class="flex justify-between items-center mb-2">
+                <label class="block text-sm font-medium text-slate-300">Selected Icons (<span id="selectedCount">0</span>)</label>
+                <button id="clearBtn" class="text-xs text-red-400 hover:text-red-300 hidden transition">Clear All</button>
+              </div>
+              <div id="selectedIconsBox" class="flex-1 bg-slate-800/50 border border-slate-700 rounded-xl p-4 flex flex-wrap gap-2 content-start overflow-y-auto max-h-[200px]">
+                <span class="text-slate-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>
+              </div>
+           </div>
         </div>
         
-        <div class="glass-panel p-6 rounded-xl relative group">
-          <h3 class="font-semibold text-lg mb-4 text-emerald-400">2. HTML Format</h3>
-          <p class="text-slate-400 text-sm mb-4">If you prefer HTML, use the img tag. Great for personal websites and portfolios.</p>
-          <div class="bg-black/50 p-4 rounded-lg overflow-x-auto border border-white/5 relative">
-            <code class="text-sm text-pink-300 whitespace-nowrap">&lt;a href="https://icon-space.vercel.app"&gt;<br/>&nbsp;&nbsp;&lt;img src="https://icon-space.vercel.app/icons?i=js,html,css" /&gt;<br/>&lt;/a&gt;</code>
-          </div>
+        <!-- Preview & Export -->
+        <div class="md:col-span-7 glass-panel p-6 rounded-2xl flex flex-col gap-6">
+           <label class="block text-sm font-medium text-slate-300">Live Preview</label>
+           <div class="bg-[#121826] rounded-xl border border-white/5 flex flex-wrap gap-2 items-center justify-center p-6 min-h-[160px] overflow-x-auto overflow-y-hidden transition-colors" id="previewContainer">
+             <img id="builderPreview" src="/icons?i=js,ts,react&theme=dark" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">
+           </div>
+           
+           <!-- Export -->
+           <div>
+              <div class="flex gap-2 mb-2">
+                 <button class="export-tab active text-sm px-3 py-1.5 rounded-t-lg bg-slate-900 border-t border-l border-r border-slate-700 text-blue-400 font-medium" data-type="markdown">Markdown</button>
+                 <button class="export-tab text-sm px-3 py-1.5 rounded-t-lg text-slate-400 hover:text-slate-200 transition font-medium border-b border-transparent" data-type="html">HTML</button>
+                 <button class="export-tab text-sm px-3 py-1.5 rounded-t-lg text-slate-400 hover:text-slate-200 transition font-medium border-b border-transparent" data-type="url">URL</button>
+              </div>
+              <div class="relative bg-slate-900 border border-slate-700 rounded-b-lg rounded-tr-lg p-1">
+                <textarea id="exportCode" readonly class="w-full h-24 bg-transparent p-3 text-sm text-emerald-400 font-mono resize-none focus:outline-none selection:bg-emerald-900/50">Select icons first...</textarea>
+                <button id="copyExportBtn" class="absolute top-3 right-3 p-2 bg-slate-800 hover:bg-slate-700 rounded-md border border-slate-600 transition group" title="Copy to clipboard">
+                  <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+           </div>
         </div>
       </div>
     </section>
@@ -110,6 +164,245 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
+      // Builder State
+      const builderState = {
+        icons: [],
+        type: 'skill', // 'skill' or 'shield'
+        size: 48,
+        theme: 'dark',
+        perLine: 15,
+        exportType: 'markdown'
+      };
+
+      // Builder DOM Elements
+      const typeSkillBtn = document.getElementById('typeSkillBtn');
+      const typeShieldBtn = document.getElementById('typeShieldBtn');
+      const sizeInput = document.getElementById('sizeInput');
+      const themeDarkBtn = document.getElementById('themeDarkBtn');
+      const themeLightBtn = document.getElementById('themeLightBtn');
+      const perLineInput = document.getElementById('perLineInput');
+      const perLineContainer = document.getElementById('perLineContainer');
+      const selectedIconsBox = document.getElementById('selectedIconsBox');
+      const selectedCount = document.getElementById('selectedCount');
+      const clearBtn = document.getElementById('clearBtn');
+      const exportTabs = document.querySelectorAll('.export-tab');
+      const exportCode = document.getElementById('exportCode');
+      const copyExportBtn = document.getElementById('copyExportBtn');
+      const previewContainer = document.getElementById('previewContainer');
+
+      // Builder Functions
+      window.toggleIcon = function(name) {
+        const index = builderState.icons.indexOf(name);
+        if (index > -1) {
+          builderState.icons.splice(index, 1);
+        } else {
+          builderState.icons.push(name);
+        }
+        updateBuilderUI();
+      };
+
+      function updateBuilderUI() {
+        selectedCount.innerText = builderState.icons.length;
+        if (builderState.icons.length > 0) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+
+        if (builderState.icons.length === 0) {
+          selectedIconsBox.innerHTML = '<span class="text-slate-500 text-sm italic m-auto">Click icons from the directory below to add them.</span>';
+        } else {
+          selectedIconsBox.innerHTML = builderState.icons.map(name => `
+            <div class="flex items-center gap-1 bg-slate-700 hover:bg-slate-600 text-slate-200 px-2 py-1 rounded cursor-pointer transition text-xs border border-slate-600 shadow-sm" onclick="toggleIcon('${name}')" title="Remove">
+              <span>${name}</span>
+              <svg class="w-3 h-3 text-slate-400 hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+          `).join('');
+        }
+
+        document.querySelectorAll('.icon-card').forEach(card => {
+          const name = card.dataset.name;
+          if (builderState.icons.includes(name)) {
+            card.classList.add('ring-2', 'ring-blue-500', 'bg-white/10');
+            card.querySelector('.check-badge').classList.remove('hidden');
+          } else {
+            card.classList.remove('ring-2', 'ring-blue-500', 'bg-white/10');
+            card.querySelector('.check-badge').classList.add('hidden');
+          }
+        });
+
+        // Toggle perLine visibility
+        if (builderState.type === 'shield') {
+          perLineContainer.style.opacity = '0.5';
+          perLineInput.disabled = true;
+          sizeInput.disabled = true;
+          sizeInput.parentElement.style.opacity = '0.5';
+        } else {
+          perLineContainer.style.opacity = '1';
+          perLineInput.disabled = false;
+          sizeInput.disabled = false;
+          sizeInput.parentElement.style.opacity = '1';
+        }
+
+        // Render Preview
+        if (builderState.icons.length === 0) {
+          if (builderState.type === 'skill') {
+            previewContainer.innerHTML = `<img src="/icons?i=js,ts,react&theme=${builderState.theme}&size=${builderState.size}" class="max-w-none opacity-20 transition-opacity duration-300" alt="Preview">`;
+          } else {
+            const bg = builderState.theme === 'dark' ? '1A1A1A' : 'E2E8F0';
+            const fg = builderState.theme === 'dark' ? 'white' : 'black';
+            previewContainer.innerHTML = `
+              <img src="https://img.shields.io/badge/JavaScript-${bg}?style=for-the-badge&logo=javascript&logoColor=${fg}" class="opacity-20 transition-opacity duration-300" />
+              <img src="https://img.shields.io/badge/TypeScript-${bg}?style=for-the-badge&logo=typescript&logoColor=${fg}" class="opacity-20 transition-opacity duration-300" />
+            `;
+          }
+        } else {
+          if (builderState.type === 'skill') {
+            previewContainer.innerHTML = `<img src="/icons?i=${builderState.icons.join(',')}&theme=${builderState.theme}&perline=${builderState.perLine}&size=${builderState.size}" class="max-w-none transition-opacity duration-300" alt="Preview">`;
+          } else {
+            const bg = builderState.theme === 'dark' ? '1A1A1A' : 'E2E8F0';
+            const fg = builderState.theme === 'dark' ? 'white' : 'black';
+            previewContainer.innerHTML = builderState.icons.map(name => 
+              `<img src="https://img.shields.io/badge/${name}-${bg}?style=for-the-badge&logo=${name}&logoColor=${fg}" alt="${name}" />`
+            ).join('');
+          }
+        }
+        
+        if(builderState.theme === 'light') {
+          previewContainer.classList.remove('bg-[#121826]');
+          previewContainer.classList.add('bg-slate-200');
+        } else {
+          previewContainer.classList.remove('bg-slate-200');
+          previewContainer.classList.add('bg-[#121826]');
+        }
+
+        updateExportCode();
+      }
+
+      function updateExportCode() {
+        if (builderState.icons.length === 0) {
+          exportCode.value = "Select icons first...";
+          return;
+        }
+        
+        if (builderState.type === 'skill') {
+          const url = `https://icon-space.vercel.app/icons?i=${builderState.icons.join(',')}&theme=${builderState.theme}&perline=${builderState.perLine}&size=${builderState.size}`;
+          if (builderState.exportType === 'markdown') {
+            exportCode.value = `[![My Skills](${url})](https://icon-space.vercel.app)`;
+          } else if (builderState.exportType === 'html') {
+            exportCode.value = `<a href="https://icon-space.vercel.app">\n  <img src="${url}" alt="My Skills" />\n</a>`;
+          } else {
+            exportCode.value = url;
+          }
+        } else {
+          const bg = builderState.theme === 'dark' ? '1A1A1A' : 'E2E8F0';
+          const fg = builderState.theme === 'dark' ? 'white' : 'black';
+          
+          if (builderState.exportType === 'markdown') {
+            exportCode.value = builderState.icons.map(name => 
+              `![${name}](https://img.shields.io/badge/${name}-${bg}?style=for-the-badge&logo=${name}&logoColor=${fg})`
+            ).join(' ');
+          } else if (builderState.exportType === 'html') {
+            exportCode.value = builderState.icons.map(name => 
+              `<img src="https://img.shields.io/badge/${name}-${bg}?style=for-the-badge&logo=${name}&logoColor=${fg}" alt="${name}" />`
+            ).join('\n');
+          } else {
+            exportCode.value = builderState.icons.map(name => 
+              `https://img.shields.io/badge/${name}-${bg}?style=for-the-badge&logo=${name}&logoColor=${fg}`
+            ).join('\n');
+          }
+        }
+      }
+
+      // Builder Event Listeners
+      typeSkillBtn.addEventListener('click', () => {
+        builderState.type = 'skill';
+        typeSkillBtn.classList.replace('text-slate-400', 'text-white');
+        typeSkillBtn.classList.replace('hover:text-white', 'bg-slate-700');
+        typeSkillBtn.classList.add('shadow-sm');
+        typeShieldBtn.classList.replace('text-white', 'text-slate-400');
+        typeShieldBtn.classList.replace('bg-slate-700', 'hover:text-white');
+        typeShieldBtn.classList.remove('shadow-sm');
+        updateBuilderUI();
+      });
+
+      typeShieldBtn.addEventListener('click', () => {
+        builderState.type = 'shield';
+        typeShieldBtn.classList.replace('text-slate-400', 'text-white');
+        typeShieldBtn.classList.replace('hover:text-white', 'bg-slate-700');
+        typeShieldBtn.classList.add('shadow-sm');
+        typeSkillBtn.classList.replace('text-white', 'text-slate-400');
+        typeSkillBtn.classList.replace('bg-slate-700', 'hover:text-white');
+        typeSkillBtn.classList.remove('shadow-sm');
+        updateBuilderUI();
+      });
+
+      sizeInput.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        if (val >= 16 && val <= 256) {
+          builderState.size = val;
+          updateBuilderUI();
+        }
+      });
+      themeDarkBtn.addEventListener('click', () => {
+        builderState.theme = 'dark';
+        themeDarkBtn.classList.replace('text-slate-400', 'text-white');
+        themeDarkBtn.classList.replace('hover:text-white', 'bg-slate-700');
+        themeDarkBtn.classList.add('shadow-sm');
+        themeLightBtn.classList.replace('text-white', 'text-slate-400');
+        themeLightBtn.classList.replace('bg-slate-700', 'hover:text-white');
+        themeLightBtn.classList.remove('shadow-sm');
+        updateBuilderUI();
+      });
+
+      themeLightBtn.addEventListener('click', () => {
+        builderState.theme = 'light';
+        themeLightBtn.classList.replace('text-slate-400', 'text-white');
+        themeLightBtn.classList.replace('hover:text-white', 'bg-slate-700');
+        themeLightBtn.classList.add('shadow-sm');
+        themeDarkBtn.classList.replace('text-white', 'text-slate-400');
+        themeDarkBtn.classList.replace('bg-slate-700', 'hover:text-white');
+        themeDarkBtn.classList.remove('shadow-sm');
+        updateBuilderUI();
+      });
+
+      perLineInput.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        if (val > 0 && val <= 100) {
+          builderState.perLine = val;
+          updateBuilderUI();
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        builderState.icons = [];
+        updateBuilderUI();
+      });
+
+      exportTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          builderState.exportType = e.target.dataset.type;
+          exportTabs.forEach(t => {
+            t.classList.remove('bg-slate-900', 'border-t', 'border-l', 'border-r', 'border-slate-700', 'text-blue-400');
+            t.classList.add('border-b', 'border-transparent', 'text-slate-400', 'hover:text-slate-200');
+          });
+          e.target.classList.add('bg-slate-900', 'border-t', 'border-l', 'border-r', 'border-slate-700', 'text-blue-400');
+          e.target.classList.remove('border-b', 'border-transparent', 'text-slate-400', 'hover:text-slate-200');
+          updateExportCode();
+        });
+      });
+
+      copyExportBtn.addEventListener('click', () => {
+        if(builderState.icons.length === 0) return;
+        navigator.clipboard.writeText(exportCode.value);
+        
+        const originalHtml = copyExportBtn.innerHTML;
+        copyExportBtn.innerHTML = '<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+        setTimeout(() => {
+          copyExportBtn.innerHTML = originalHtml;
+        }, 1500);
+      });
+
       const container = document.getElementById('iconGridContainer');
       const search = document.getElementById('searchInput');
       let allIcons = [];
@@ -184,22 +477,16 @@
 
           items.forEach(name => {
             const card = document.createElement('div');
-            card.className = 'glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition cursor-pointer group';
-            card.title = "Click to copy parameter: " + name;
-            card.onclick = () => {
-              navigator.clipboard.writeText(name);
-              const span = card.querySelector('span');
-              const originalText = span.innerText;
-              span.innerText = 'Copied!';
-              span.classList.add('text-emerald-400');
-              setTimeout(() => {
-                span.innerText = originalText;
-                span.classList.remove('text-emerald-400');
-              }, 1500);
-            };
+            card.className = 'icon-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center gap-3 hover:bg-white/5 transition cursor-pointer group relative';
+            card.dataset.name = name;
+            card.title = "Click to add: " + name;
+            card.onclick = () => window.toggleIcon(name);
             
             card.innerHTML = `
-              <img src="/icons?i=${name}&theme=dark" alt="${name}" class="w-12 h-12 group-hover:scale-110 transition-transform drop-shadow-lg" />
+              <div class="check-badge hidden absolute -top-2 -right-2 bg-blue-500 text-white rounded-full p-1 shadow-lg">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <img src="/icons?i=${name}&theme=dark" alt="${name}" class="w-12 h-12 group-hover:scale-110 transition-transform drop-shadow-lg" loading="lazy" />
               <span class="text-xs font-medium text-slate-300 truncate w-full text-center pointer-events-none">${name}</span>
             `;
             grid.appendChild(card);
@@ -208,6 +495,9 @@
           section.appendChild(grid);
           container.appendChild(section);
         }
+        
+        // Ensure previously selected items stay visually selected after re-render (e.g., from search)
+        updateBuilderUI();
       }
     });
   </script>

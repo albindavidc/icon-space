@@ -56,15 +56,15 @@ const themedIcons = [
 
 const ICONS_PER_LINE = 15;
 const ONE_ICON = 48;
-const SCALE = ONE_ICON / (300 - 44);
 
-function generateSvg(iconNames, perLine) {
+function generateSvg(iconNames, perLine, size = ONE_ICON) {
   const iconSvgList = iconNames.map(i => icons[i]);
 
+  const scale = size / (300 - 44);
   const length = Math.min(perLine * 300, iconNames.length * 300) - 44;
   const height = Math.ceil(iconSvgList.length / perLine) * 300 - 44;
-  const scaledHeight = height * SCALE;
-  const scaledWidth = length * SCALE;
+  const scaledHeight = height * scale;
+  const scaledWidth = length * scale;
 
   return `
   <svg width="${scaledWidth}" height="${scaledHeight}" viewBox="0 0 ${length} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
@@ -110,6 +110,11 @@ app.get('/icons', (req, res) => {
     return res.status(400).send('Icons per line must be a number between 1 and 50');
   }
 
+  const size = parseInt(req.query.size) || ONE_ICON;
+  if (isNaN(size) || size < 16 || size > 512) {
+    return res.status(400).send('Size must be a number between 16 and 512');
+  }
+
   let iconShortNames = [];
   if (iconParam === 'all') iconShortNames = iconNameList;
   else iconShortNames = iconParam.split(',');
@@ -119,7 +124,7 @@ app.get('/icons', (req, res) => {
     return res.status(400).send("You didn't format the icons param correctly!");
   }
 
-  const svg = generateSvg(iconNames, perLine);
+  const svg = generateSvg(iconNames, perLine, size);
   res.setHeader('Content-Type', 'image/svg+xml');
   res.send(svg);
 });
