@@ -67,7 +67,7 @@
       <div class="flex items-center gap-6">
         <a href="#builder" class="text-sm text-gray-400 hover:text-white transition hidden sm:inline-block">Builder</a>
         <a href="#directory" class="text-sm text-gray-400 hover:text-white transition hidden sm:inline-block">Directory</a>
-        <a href="https://github.com/albindavidc/skill-icons" target="_blank" class="text-sm text-gray-400 hover:text-white transition">GitHub</a>
+        <a href="https://github.com/albindavidc/icon-space" target="_blank" class="text-sm text-gray-400 hover:text-white transition">GitHub</a>
       </div>
     </div>
   </nav>
@@ -193,7 +193,7 @@
   </main>
 
   <footer class="border-t border-white/5 py-12 text-center text-gray-500 text-sm">
-    <p>Powered by Google AI Studio. Based on the skill-icons repository, remixed into Icon Space.</p>
+    <p>Powered by Google AI Studio. Open source on <a href="https://github.com/albindavidc/icon-space" target="_blank" class="text-violet-400 hover:text-violet-300 transition">GitHub</a>.</p>
   </footer>
 
   <script>
@@ -1342,9 +1342,9 @@
         if (builderState.type === 'skill') {
           const url = `https://icon-space.vercel.app/icons?i=${builderState.icons.join(',')}&theme=${builderState.theme}&perline=${builderState.perLine}&size=${builderState.size}`;
           if (builderState.exportType === 'markdown') {
-            exportCode.value = `[![My Skills](${url})](https://icon-space.vercel.app)`;
+            exportCode.value = `[![My Skills](${url})](https://github.com/albindavidc/icon-space)`;
           } else if (builderState.exportType === 'html') {
-            exportCode.value = `<a href="https://icon-space.vercel.app">\n  <img src="${url}" alt="My Skills" />\n</a>`;
+            exportCode.value = `<a href="https://github.com/albindavidc/icon-space">\n  <img src="${url}" alt="My Skills" />\n</a>`;
           } else {
             exportCode.value = url;
           }
