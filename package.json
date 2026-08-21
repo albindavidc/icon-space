@@ -10,7 +10,8 @@
 		"build": "node build.js"
 	},
 	"dependencies": {
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"simple-icons": "^16.28.0"
 	},
 	"devDependencies": {
 		"prettier": "^2.5.1"

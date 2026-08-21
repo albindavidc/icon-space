@@ -1,0 +1,1010 @@
+{
+  "activitypub": {
+    "label": "ActivityPub",
+    "bg": "F1007E",
+    "logo": "activitypub",
+    "fg": "white"
+  },
+  "actix": {
+    "label": "Actix",
+    "bg": "000000",
+    "logo": "actix",
+    "fg": "white"
+  },
+  "anaconda": {
+    "label": "Anaconda",
+    "bg": "44A833",
+    "logo": "anaconda",
+    "fg": "white"
+  },
+  "androidstudio": {
+    "label": "Android Studio",
+    "bg": "3DDC84",
+    "logo": "androidstudio",
+    "fg": "black"
+  },
+  "angular": {
+    "label": "Angular",
+    "bg": "0F0F11",
+    "logo": "angular",
+    "fg": "white"
+  },
+  "ansible": {
+    "label": "Ansible",
+    "bg": "EE0000",
+    "logo": "ansible",
+    "fg": "white"
+  },
+  "apple": {
+    "label": "Apple",
+    "bg": "000000",
+    "logo": "apple",
+    "fg": "white"
+  },
+  "appwrite": {
+    "label": "Appwrite",
+    "bg": "FD366E",
+    "logo": "appwrite",
+    "fg": "white"
+  },
+  "arduino": {
+    "label": "Arduino",
+    "bg": "00878F",
+    "logo": "arduino",
+    "fg": "white"
+  },
+  "astro": {
+    "label": "Astro",
+    "bg": "BC52EE",
+    "logo": "astro",
+    "fg": "black"
+  },
+  "autocad": {
+    "label": "AutoCAD",
+    "bg": "E51050",
+    "logo": "autocad",
+    "fg": "white"
+  },
+  "bsd": {
+    "label": "BSD",
+    "bg": "AB2B28",
+    "logo": "bsd",
+    "fg": "white"
+  },
+  "babel": {
+    "label": "Babel",
+    "bg": "F9DC3E",
+    "logo": "babel",
+    "fg": "black"
+  },
+  "bevy": {
+    "label": "Bevy",
+    "bg": "232326",
+    "logo": "bevy",
+    "fg": "white"
+  },
+  "bitbucket": {
+    "label": "Bitbucket",
+    "bg": "0052CC",
+    "logo": "bitbucket",
+    "fg": "white"
+  },
+  "blender": {
+    "label": "Blender",
+    "bg": "E87D0D",
+    "logo": "blender",
+    "fg": "black"
+  },
+  "bootstrap": {
+    "label": "Bootstrap",
+    "bg": "7952B3",
+    "logo": "bootstrap",
+    "fg": "white"
+  },
+  "bun": {
+    "label": "Bun",
+    "bg": "000000",
+    "logo": "bun",
+    "fg": "white"
+  },
+  "c": {
+    "label": "C",
+    "bg": "A8B9CC",
+    "logo": "c",
+    "fg": "black"
+  },
+  "clion": {
+    "label": "CLion",
+    "bg": "000000",
+    "logo": "clion",
+    "fg": "white"
+  },
+  "cmake": {
+    "label": "CMake",
+    "bg": "064F8C",
+    "logo": "cmake",
+    "fg": "white"
+  },
+  "cpp": {
+    "label": "C++",
+    "bg": "00599C",
+    "logo": "cplusplus",
+    "fg": "white"
+  },
+  "css": {
+    "label": "CSS",
+    "bg": "663399",
+    "logo": "css",
+    "fg": "white"
+  },
+  "clojure": {
+    "label": "Clojure",
+    "bg": "5881D8",
+    "logo": "clojure",
+    "fg": "white"
+  },
+  "cloudflare": {
+    "label": "Cloudflare",
+    "bg": "F38020",
+    "logo": "cloudflare",
+    "fg": "black"
+  },
+  "coffeescript": {
+    "label": "CoffeeScript",
+    "bg": "2F2625",
+    "logo": "coffeescript",
+    "fg": "white"
+  },
+  "crystal": {
+    "label": "Crystal",
+    "bg": "000000",
+    "logo": "crystal",
+    "fg": "white"
+  },
+  "cypress": {
+    "label": "Cypress",
+    "bg": "69D3A7",
+    "logo": "cypress",
+    "fg": "black"
+  },
+  "d3": {
+    "label": "D3",
+    "bg": "F9A03C",
+    "logo": "d3",
+    "fg": "black"
+  },
+  "deno": {
+    "label": "Deno",
+    "bg": "000000",
+    "logo": "deno",
+    "fg": "white"
+  },
+  "dart": {
+    "label": "Dart",
+    "bg": "0175C2",
+    "logo": "dart",
+    "fg": "white"
+  },
+  "debian": {
+    "label": "Debian",
+    "bg": "A81D33",
+    "logo": "debian",
+    "fg": "white"
+  },
+  "discord": {
+    "label": "Discord",
+    "bg": "5865F2",
+    "logo": "discord",
+    "fg": "white"
+  },
+  "django": {
+    "label": "Django",
+    "bg": "092E20",
+    "logo": "django",
+    "fg": "white"
+  },
+  "docker": {
+    "label": "Docker",
+    "bg": "2496ED",
+    "logo": "docker",
+    "fg": "white"
+  },
+  "dotnet": {
+    "label": ".NET",
+    "bg": "512BD4",
+    "logo": "dotnet",
+    "fg": "white"
+  },
+  "elasticsearch": {
+    "label": "Elasticsearch",
+    "bg": "005571",
+    "logo": "elasticsearch",
+    "fg": "white"
+  },
+  "electron": {
+    "label": "Electron",
+    "bg": "47848F",
+    "logo": "electron",
+    "fg": "white"
+  },
+  "elixir": {
+    "label": "Elixir",
+    "bg": "4B275F",
+    "logo": "elixir",
+    "fg": "white"
+  },
+  "fastapi": {
+    "label": "FastAPI",
+    "bg": "009688",
+    "logo": "fastapi",
+    "fg": "white"
+  },
+  "figma": {
+    "label": "Figma",
+    "bg": "F24E1E",
+    "logo": "figma",
+    "fg": "white"
+  },
+  "firebase": {
+    "label": "Firebase",
+    "bg": "DD2C00",
+    "logo": "firebase",
+    "fg": "white"
+  },
+  "flask": {
+    "label": "Flask",
+    "bg": "3BABC3",
+    "logo": "flask",
+    "fg": "black"
+  },
+  "flutter": {
+    "label": "Flutter",
+    "bg": "02569B",
+    "logo": "flutter",
+    "fg": "white"
+  },
+  "fortran": {
+    "label": "Fortran",
+    "bg": "734F96",
+    "logo": "fortran",
+    "fg": "white"
+  },
+  "gtk": {
+    "label": "GTK",
+    "bg": "7FE719",
+    "logo": "gtk",
+    "fg": "black"
+  },
+  "gatsby": {
+    "label": "Gatsby",
+    "bg": "663399",
+    "logo": "gatsby",
+    "fg": "white"
+  },
+  "git": {
+    "label": "Git",
+    "bg": "F03C2E",
+    "logo": "git",
+    "fg": "white"
+  },
+  "gitlab": {
+    "label": "GitLab",
+    "bg": "FC6D26",
+    "logo": "gitlab",
+    "fg": "black"
+  },
+  "github": {
+    "label": "GitHub",
+    "bg": "181717",
+    "logo": "github",
+    "fg": "white"
+  },
+  "githubactions": {
+    "label": "GitHub Actions",
+    "bg": "2088FF",
+    "logo": "githubactions",
+    "fg": "white"
+  },
+  "gmail": {
+    "label": "Gmail",
+    "bg": "EA4335",
+    "logo": "gmail",
+    "fg": "white"
+  },
+  "gradle": {
+    "label": "Gradle",
+    "bg": "02303A",
+    "logo": "gradle",
+    "fg": "white"
+  },
+  "grafana": {
+    "label": "Grafana",
+    "bg": "F46800",
+    "logo": "grafana",
+    "fg": "black"
+  },
+  "graphql": {
+    "label": "GraphQL",
+    "bg": "E10098",
+    "logo": "graphql",
+    "fg": "white"
+  },
+  "gulp": {
+    "label": "gulp",
+    "bg": "CF4647",
+    "logo": "gulp",
+    "fg": "white"
+  },
+  "haskell": {
+    "label": "Haskell",
+    "bg": "5D4F85",
+    "logo": "haskell",
+    "fg": "white"
+  },
+  "haxe": {
+    "label": "Haxe",
+    "bg": "EA8220",
+    "logo": "haxe",
+    "fg": "black"
+  },
+  "hibernate": {
+    "label": "Hibernate",
+    "bg": "59666C",
+    "logo": "hibernate",
+    "fg": "white"
+  },
+  "htmx": {
+    "label": "htmx",
+    "bg": "3366CC",
+    "logo": "htmx",
+    "fg": "white"
+  },
+  "ipfs": {
+    "label": "IPFS",
+    "bg": "65C2CB",
+    "logo": "ipfs",
+    "fg": "black"
+  },
+  "instagram": {
+    "label": "Instagram",
+    "bg": "FF0069",
+    "logo": "instagram",
+    "fg": "white"
+  },
+  "jquery": {
+    "label": "jQuery",
+    "bg": "0769AD",
+    "logo": "jquery",
+    "fg": "white"
+  },
+  "javascript": {
+    "label": "JavaScript",
+    "bg": "F7DF1E",
+    "logo": "javascript",
+    "fg": "black"
+  },
+  "jenkins": {
+    "label": "Jenkins",
+    "bg": "D24939",
+    "logo": "jenkins",
+    "fg": "white"
+  },
+  "jest": {
+    "label": "Jest",
+    "bg": "C21325",
+    "logo": "jest",
+    "fg": "white"
+  },
+  "julia": {
+    "label": "Julia",
+    "bg": "9558B2",
+    "logo": "julia",
+    "fg": "white"
+  },
+  "kotlin": {
+    "label": "Kotlin",
+    "bg": "7F52FF",
+    "logo": "kotlin",
+    "fg": "white"
+  },
+  "ktor": {
+    "label": "Ktor",
+    "bg": "087CFA",
+    "logo": "ktor",
+    "fg": "white"
+  },
+  "kubernetes": {
+    "label": "Kubernetes",
+    "bg": "326CE5",
+    "logo": "kubernetes",
+    "fg": "white"
+  },
+  "latex": {
+    "label": "LaTeX",
+    "bg": "008080",
+    "logo": "latex",
+    "fg": "white"
+  },
+  "laravel": {
+    "label": "Laravel",
+    "bg": "FF2D20",
+    "logo": "laravel",
+    "fg": "white"
+  },
+  "less": {
+    "label": "Less",
+    "bg": "1D365D",
+    "logo": "less",
+    "fg": "white"
+  },
+  "linux": {
+    "label": "Linux",
+    "bg": "FCC624",
+    "logo": "linux",
+    "fg": "black"
+  },
+  "lit": {
+    "label": "Lit",
+    "bg": "324FFF",
+    "logo": "lit",
+    "fg": "white"
+  },
+  "lua": {
+    "label": "Lua",
+    "bg": "000080",
+    "logo": "lua",
+    "fg": "white"
+  },
+  "markdown": {
+    "label": "Markdown",
+    "bg": "000000",
+    "logo": "markdown",
+    "fg": "white"
+  },
+  "mastodon": {
+    "label": "Mastodon",
+    "bg": "6364FF",
+    "logo": "mastodon",
+    "fg": "white"
+  },
+  "misskey": {
+    "label": "Misskey",
+    "bg": "A1CA03",
+    "logo": "misskey",
+    "fg": "black"
+  },
+  "mongodb": {
+    "label": "MongoDB",
+    "bg": "47A248",
+    "logo": "mongodb",
+    "fg": "white"
+  },
+  "mysql": {
+    "label": "MySQL",
+    "bg": "4479A1",
+    "logo": "mysql",
+    "fg": "white"
+  },
+  "neovim": {
+    "label": "Neovim",
+    "bg": "57A143",
+    "logo": "neovim",
+    "fg": "black"
+  },
+  "nestjs": {
+    "label": "NestJS",
+    "bg": "E0234E",
+    "logo": "nestjs",
+    "fg": "white"
+  },
+  "netlify": {
+    "label": "Netlify",
+    "bg": "00C7B7",
+    "logo": "netlify",
+    "fg": "black"
+  },
+  "nginx": {
+    "label": "NGINX",
+    "bg": "009639",
+    "logo": "nginx",
+    "fg": "white"
+  },
+  "nim": {
+    "label": "Nim",
+    "bg": "FFE953",
+    "logo": "nim",
+    "fg": "black"
+  },
+  "notion": {
+    "label": "Notion",
+    "bg": "000000",
+    "logo": "notion",
+    "fg": "white"
+  },
+  "npm": {
+    "label": "npm",
+    "bg": "CB3837",
+    "logo": "npm",
+    "fg": "white"
+  },
+  "ocaml": {
+    "label": "OCaml",
+    "bg": "EC6813",
+    "logo": "ocaml",
+    "fg": "black"
+  },
+  "obsidian": {
+    "label": "Obsidian",
+    "bg": "7C3AED",
+    "logo": "obsidian",
+    "fg": "white"
+  },
+  "octave": {
+    "label": "Octave",
+    "bg": "0790C0",
+    "logo": "octave",
+    "fg": "white"
+  },
+  "opencv": {
+    "label": "OpenCV",
+    "bg": "5C3EE8",
+    "logo": "opencv",
+    "fg": "white"
+  },
+  "openstack": {
+    "label": "OpenStack",
+    "bg": "ED1944",
+    "logo": "openstack",
+    "fg": "white"
+  },
+  "php": {
+    "label": "PHP",
+    "bg": "777BB4",
+    "logo": "php",
+    "fg": "black"
+  },
+  "perl": {
+    "label": "Perl",
+    "bg": "0073A1",
+    "logo": "perl",
+    "fg": "white"
+  },
+  "phpstorm": {
+    "label": "PhpStorm",
+    "bg": "000000",
+    "logo": "phpstorm",
+    "fg": "white"
+  },
+  "pinia": {
+    "label": "Pinia",
+    "bg": "FFD859",
+    "logo": "pinia",
+    "fg": "black"
+  },
+  "planetscale": {
+    "label": "PlanetScale",
+    "bg": "000000",
+    "logo": "planetscale",
+    "fg": "white"
+  },
+  "pnpm": {
+    "label": "pnpm",
+    "bg": "F69220",
+    "logo": "pnpm",
+    "fg": "black"
+  },
+  "postgresql": {
+    "label": "PostgreSQL",
+    "bg": "4169E1",
+    "logo": "postgresql",
+    "fg": "white"
+  },
+  "postman": {
+    "label": "Postman",
+    "bg": "FF6C37",
+    "logo": "postman",
+    "fg": "black"
+  },
+  "prisma": {
+    "label": "Prisma",
+    "bg": "2D3748",
+    "logo": "prisma",
+    "fg": "white"
+  },
+  "prometheus": {
+    "label": "Prometheus",
+    "bg": "E6522C",
+    "logo": "prometheus",
+    "fg": "white"
+  },
+  "pug": {
+    "label": "Pug",
+    "bg": "A86454",
+    "logo": "pug",
+    "fg": "white"
+  },
+  "pycharm": {
+    "label": "PyCharm",
+    "bg": "000000",
+    "logo": "pycharm",
+    "fg": "white"
+  },
+  "pytorch": {
+    "label": "PyTorch",
+    "bg": "EE4C2C",
+    "logo": "pytorch",
+    "fg": "white"
+  },
+  "python": {
+    "label": "Python",
+    "bg": "3776AB",
+    "logo": "python",
+    "fg": "white"
+  },
+  "qt": {
+    "label": "Qt",
+    "bg": "41CD52",
+    "logo": "qt",
+    "fg": "black"
+  },
+  "r": {
+    "label": "R",
+    "bg": "276DC3",
+    "logo": "r",
+    "fg": "white"
+  },
+  "ros": {
+    "label": "ROS",
+    "bg": "22314E",
+    "logo": "ros",
+    "fg": "white"
+  },
+  "rabbitmq": {
+    "label": "RabbitMQ",
+    "bg": "FF6600",
+    "logo": "rabbitmq",
+    "fg": "black"
+  },
+  "raspberrypi": {
+    "label": "Raspberry Pi",
+    "bg": "A22846",
+    "logo": "raspberrypi",
+    "fg": "white"
+  },
+  "react": {
+    "label": "React",
+    "bg": "61DAFB",
+    "logo": "react",
+    "fg": "black"
+  },
+  "reactivex": {
+    "label": "ReactiveX",
+    "bg": "B7178C",
+    "logo": "reactivex",
+    "fg": "white"
+  },
+  "redhat": {
+    "label": "Red Hat",
+    "bg": "EE0000",
+    "logo": "redhat",
+    "fg": "white"
+  },
+  "redis": {
+    "label": "Redis",
+    "bg": "FF4438",
+    "logo": "redis",
+    "fg": "white"
+  },
+  "redux": {
+    "label": "Redux",
+    "bg": "764ABC",
+    "logo": "redux",
+    "fg": "white"
+  },
+  "remix": {
+    "label": "Remix",
+    "bg": "000000",
+    "logo": "remix",
+    "fg": "white"
+  },
+  "replit": {
+    "label": "Replit",
+    "bg": "F26207",
+    "logo": "replit",
+    "fg": "black"
+  },
+  "rider": {
+    "label": "Rider",
+    "bg": "000000",
+    "logo": "rider",
+    "fg": "white"
+  },
+  "robloxstudio": {
+    "label": "Roblox Studio",
+    "bg": "00A2FF",
+    "logo": "robloxstudio",
+    "fg": "white"
+  },
+  "rocket": {
+    "label": "Rocket",
+    "bg": "D33847",
+    "logo": "rocket",
+    "fg": "white"
+  },
+  "ruby": {
+    "label": "Ruby",
+    "bg": "CC342D",
+    "logo": "ruby",
+    "fg": "white"
+  },
+  "rust": {
+    "label": "Rust",
+    "bg": "000000",
+    "logo": "rust",
+    "fg": "white"
+  },
+  "sqlite": {
+    "label": "SQLite",
+    "bg": "003B57",
+    "logo": "sqlite",
+    "fg": "white"
+  },
+  "svg": {
+    "label": "SVG",
+    "bg": "FFB13B",
+    "logo": "svg",
+    "fg": "black"
+  },
+  "sass": {
+    "label": "Sass",
+    "bg": "CC6699",
+    "logo": "sass",
+    "fg": "black"
+  },
+  "scala": {
+    "label": "Scala",
+    "bg": "DC322F",
+    "logo": "scala",
+    "fg": "white"
+  },
+  "scikitlearn": {
+    "label": "scikit-learn",
+    "bg": "F7931E",
+    "logo": "scikitlearn",
+    "fg": "black"
+  },
+  "selenium": {
+    "label": "Selenium",
+    "bg": "43B02A",
+    "logo": "selenium",
+    "fg": "black"
+  },
+  "sentry": {
+    "label": "Sentry",
+    "bg": "362D59",
+    "logo": "sentry",
+    "fg": "white"
+  },
+  "sequelize": {
+    "label": "Sequelize",
+    "bg": "52B0E7",
+    "logo": "sequelize",
+    "fg": "black"
+  },
+  "sketchup": {
+    "label": "SketchUp",
+    "bg": "005F9E",
+    "logo": "sketchup",
+    "fg": "white"
+  },
+  "solidity": {
+    "label": "Solidity",
+    "bg": "363636",
+    "logo": "solidity",
+    "fg": "white"
+  },
+  "spotify": {
+    "label": "Spotify",
+    "bg": "1ED760",
+    "logo": "spotify",
+    "fg": "black"
+  },
+  "spring": {
+    "label": "Spring",
+    "bg": "6DB33F",
+    "logo": "spring",
+    "fg": "black"
+  },
+  "stackoverflow": {
+    "label": "Stack Overflow",
+    "bg": "F58025",
+    "logo": "stackoverflow",
+    "fg": "black"
+  },
+  "styledcomponents": {
+    "label": "styled-components",
+    "bg": "DB7093",
+    "logo": "styledcomponents",
+    "fg": "black"
+  },
+  "supabase": {
+    "label": "Supabase",
+    "bg": "3FCF8E",
+    "logo": "supabase",
+    "fg": "black"
+  },
+  "svelte": {
+    "label": "Svelte",
+    "bg": "FF3E00",
+    "logo": "svelte",
+    "fg": "white"
+  },
+  "swift": {
+    "label": "Swift",
+    "bg": "F05138",
+    "logo": "swift",
+    "fg": "white"
+  },
+  "symfony": {
+    "label": "Symfony",
+    "bg": "000000",
+    "logo": "symfony",
+    "fg": "white"
+  },
+  "tailwindcss": {
+    "label": "Tailwind CSS",
+    "bg": "06B6D4",
+    "logo": "tailwindcss",
+    "fg": "black"
+  },
+  "tauri": {
+    "label": "Tauri",
+    "bg": "24C8D8",
+    "logo": "tauri",
+    "fg": "black"
+  },
+  "tensorflow": {
+    "label": "TensorFlow",
+    "bg": "FF6F00",
+    "logo": "tensorflow",
+    "fg": "black"
+  },
+  "terraform": {
+    "label": "Terraform",
+    "bg": "844FBA",
+    "logo": "terraform",
+    "fg": "white"
+  },
+  "typescript": {
+    "label": "TypeScript",
+    "bg": "3178C6",
+    "logo": "typescript",
+    "fg": "white"
+  },
+  "ubuntu": {
+    "label": "Ubuntu",
+    "bg": "E95420",
+    "logo": "ubuntu",
+    "fg": "white"
+  },
+  "unity": {
+    "label": "Unity",
+    "bg": "FFFFFF",
+    "logo": "unity",
+    "fg": "black"
+  },
+  "unrealengine": {
+    "label": "Unreal Engine",
+    "bg": "0E1128",
+    "logo": "unrealengine",
+    "fg": "white"
+  },
+  "v": {
+    "label": "V",
+    "bg": "5D87BF",
+    "logo": "v",
+    "fg": "black"
+  },
+  "vim": {
+    "label": "Vim",
+    "bg": "019733",
+    "logo": "vim",
+    "fg": "white"
+  },
+  "vscodium": {
+    "label": "VSCodium",
+    "bg": "2F80ED",
+    "logo": "vscodium",
+    "fg": "white"
+  },
+  "vala": {
+    "label": "Vala",
+    "bg": "7239B3",
+    "logo": "vala",
+    "fg": "white"
+  },
+  "vercel": {
+    "label": "Vercel",
+    "bg": "000000",
+    "logo": "vercel",
+    "fg": "white"
+  },
+  "vite": {
+    "label": "Vite",
+    "bg": "9135FF",
+    "logo": "vite",
+    "fg": "white"
+  },
+  "vitest": {
+    "label": "Vitest",
+    "bg": "00FF74",
+    "logo": "vitest",
+    "fg": "black"
+  },
+  "vuetify": {
+    "label": "Vuetify",
+    "bg": "1867C0",
+    "logo": "vuetify",
+    "fg": "white"
+  },
+  "webassembly": {
+    "label": "WebAssembly",
+    "bg": "654FF0",
+    "logo": "webassembly",
+    "fg": "white"
+  },
+  "webstorm": {
+    "label": "WebStorm",
+    "bg": "000000",
+    "logo": "webstorm",
+    "fg": "white"
+  },
+  "webflow": {
+    "label": "Webflow",
+    "bg": "146EF5",
+    "logo": "webflow",
+    "fg": "white"
+  },
+  "webpack": {
+    "label": "Webpack",
+    "bg": "8DD6F9",
+    "logo": "webpack",
+    "fg": "black"
+  },
+  "whatsapp": {
+    "label": "WhatsApp",
+    "bg": "25D366",
+    "logo": "whatsapp",
+    "fg": "black"
+  },
+  "wordpress": {
+    "label": "WordPress",
+    "bg": "21759B",
+    "logo": "wordpress",
+    "fg": "white"
+  },
+  "x": {
+    "label": "X",
+    "bg": "000000",
+    "logo": "x",
+    "fg": "white"
+  },
+  "yarn": {
+    "label": "Yarn",
+    "bg": "2C8EBB",
+    "logo": "yarn",
+    "fg": "white"
+  },
+  "yew": {
+    "label": "Yew",
+    "bg": "009A5B",
+    "logo": "yew",
+    "fg": "white"
+  },
+  "zig": {
+    "label": "Zig",
+    "bg": "F7A41D",
+    "logo": "zig",
+    "fg": "black"
+  }
+}
