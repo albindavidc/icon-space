@@ -15,74 +15,118 @@
 
 <hr>
 
-## 🚀 What's New in Icon Space?
-Icon Space introduces several powerful features on top of the original icon sets:
+## 📖 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Features](#-features)
+- [Project Structure](#%EF%B8%8F-project-structure)
+- [Setup and Installation](#-setup-and-installation)
+- [Usage Guidelines](#-usage-guidelines)
+  - [Interactive Builder](#interactive-builder)
+  - [API Usage](#api-usage)
+- [Dependencies](#-dependencies)
+- [Contributing](#-contributing)
+- [Icons List](#icons-list)
+
+## 🚀 Project Overview
+
+**Icon Space** is a blazing-fast SVG icon server designed specifically for developers. It lets you dynamically generate customized, perfectly-spaced skill grids (like the one above) for your GitHub README, portfolio website, or resumé using just a simple URL.
+
+The project features a dedicated Node.js backend (using Express) that stitches together full-size SVGs into a single `<svg>` element on-the-fly based on query parameters. It also includes an Interactive Builder (frontend) that provides a seamless UI for browsing, configuring, and exporting the exact Markdown/HTML code you need.
+
+## ✨ Features
 
 - **🎨 Interactive Builder UI**: Easily search, click, and customize your icons directly on our new website ([icon-space.vercel.app](https://icon-space.vercel.app)). No more guessing icon names!
-- **📦 Custom Sizing**: Export icons with a custom size parameter (`&size=`) to perfectly fit your README.
-- **✨ New Icons**: Added highly requested icons like `X (Twitter)`, `WhatsApp`, `GitHub Actions`, `Stripe`, `Lucide`, `Radix UI`, `Shadcn UI`, and many more!
+- **⚡ Dynamic SVG Generation**: Icons are bundled and served on-the-fly as a single consolidated image, eliminating the need for multiple network requests.
+- **🌗 Light & Dark Themes**: First-class support for both dark (`&theme=dark`) and light (`&theme=light`) environments.
+- **📦 Highly Customizable**: Configure the size of the icons (`&size=`) and the number of icons per line (`&perline=`) to perfectly fit your README layout.
 - **📋 Export Options**: One-click copy for Markdown, HTML, and raw URLs right from the builder.
 
-## 📖 Docs
+## 🗂️ Project Structure
 
-- [Interactive Builder (Recommended!)](#interactive-builder)
-- [Specifying Icons](#specifying-icons)
-- [Themed Icons](#themed-icons)
-- [Icons Per Line](#icons-per-line)
-- [Custom Size](#custom-size)
+The codebase is organized as a lightweight, full-stack monolith:
 
-## Interactive Builder
+- **`server.js`**: The Express.js backend. Handles the `/icons` and API routes, parsing query parameters, and stitching SVGs together dynamically.
+- **`build.js`**: The build script. It reads all raw SVGs from the `icons/` directory and compiles them into a single `built-icons.json` map. This enables the server to serve SVGs directly from memory without costly disk I/O.
+- **`icons/`**: The directory containing all the raw, individual 256x256 SVG files (including their `-dark` and `-light` variants).
+- **`public/`**: Contains the frontend assets (e.g., `index.html`) for the Interactive Builder.
+- **`package.json`**: Manages the project's scripts and dependencies.
 
-The easiest way to generate your icon link is using our new **[Interactive Builder](https://icon-space.vercel.app)**. 
-Simply click the icons you want, adjust the theme, layout, and size, and copy the generated Markdown!
+## 🛠 Setup and Installation
 
-## Specifying Icons
+To run Icon Space locally on your machine, follow these steps:
 
-Copy and paste the code block below into your readme to add the skills icon element!
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/albindavidc/icon-space.git
+   cd icon-space
+   ```
 
-Change the `?i=js,html,css` to a list of your skills separated by `,`!
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+   *(Note: The `postinstall` script will automatically run `node build.js` to compile the icons!)*
 
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   This will run the build script and start the Express server on port `3000`.
+
+4. **Open in browser**:
+   Navigate to `http://localhost:3000` to view the Interactive Builder.
+
+## 💻 Usage Guidelines
+
+### Interactive Builder
+The absolute easiest way to generate your icon link is using our **[Interactive Builder](https://icon-space.vercel.app)**. 
+Simply click the icons you want, adjust the theme, layout, and size, and copy the generated Markdown/HTML!
+
+### API Usage
+
+If you prefer to construct the URL manually, copy and paste the code block below into your markdown. Change the `?i=js,html,css` to a list of your skills separated by `,`.
+
+**Basic Request**:
 ```md
 [![My Skills](https://icon-space.vercel.app/icons?i=js,html,css,wasm)](https://icon-space.vercel.app)
 ```
 
-[![My Skills](https://icon-space.vercel.app/icons?i=js,html,css,wasm)](https://icon-space.vercel.app)
-
-## Themed Icons
-
-Some icons have a dark and light themed background. You can specify which theme you want as a url parameter (`&theme=light` or `&theme=dark`). 
-
-This is optional. The default theme is `dark`.
-
+**Themed Icons**:
+You can specify which theme you want as a url parameter (`&theme=light` or `&theme=dark`). 
+*Note: The default theme is `dark`.*
 ```md
 [![My Skills](https://icon-space.vercel.app/icons?i=java,kotlin,nodejs,figma&theme=light)](https://icon-space.vercel.app)
 ```
 
-[![My Skills](https://icon-space.vercel.app/icons?i=java,kotlin,nodejs,figma&theme=light)](https://icon-space.vercel.app)
-
-## Icons Per Line
-
-You can specify how many icons you would like per line using the `perline` argument (default is 15).
-
+**Icons Per Line**:
+Specify how many icons you would like per line using the `perline` argument (default is 15).
 ```md
 [![My Skills](https://icon-space.vercel.app/icons?i=aws,gcp,azure,react,vue,flutter&perline=3)](https://icon-space.vercel.app)
 ```
 
-[![My Skills](https://icon-space.vercel.app/icons?i=aws,gcp,azure,react,vue,flutter&perline=3)](https://icon-space.vercel.app)
-
-## Custom Size
-
-You can now adjust the size of the icons! Use the `&size=` parameter (default is 48).
-
+**Custom Size**:
+Adjust the size of the icons using the `&size=` parameter (default is 48).
 ```md
 [![My Skills](https://icon-space.vercel.app/icons?i=react,ts,tailwind&size=32)](https://icon-space.vercel.app)
 ```
 
-[![My Skills](https://icon-space.vercel.app/icons?i=react,ts,tailwind&size=32)](https://icon-space.vercel.app)
+## 📦 Dependencies
 
-## 💖 Support the Project
+The project is built to be extremely lightweight and relies on minimal dependencies:
+- **[Express](https://expressjs.com/)**: The fast, unopinionated web framework for Node.js used for our API server.
+- **[Simple Icons](https://simpleicons.org/)**: Included in the build pipeline to fetch brand colors and standard SVG paths when extending the icon set.
+- **Prettier** *(Dev)*: For maintaining clean and consistent code formatting.
 
-To support the project directly, feel free to open issues for icon suggestions, or contribute with a pull request on [GitHub](https://github.com/albindavidc/icon-space)!
+## 🤝 Contributing
+
+We welcome contributions! To support the project directly, feel free to open issues for icon suggestions, or contribute with a pull request.
+When adding a new icon:
+1. Add the 256x256 SVG file to the `icons/` folder (named `[name]-dark.svg` and `[name]-light.svg`).
+2. Run `npm run build` to re-compile the JSON payload.
+3. Test it locally via the builder!
+
+---
 
 ## Icons List
 
