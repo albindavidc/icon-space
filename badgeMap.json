@@ -25,9 +25,9 @@
   },
   "angular": {
     "label": "Angular",
-    "bg": "0F0F11",
-    "logo": "angular",
-    "fg": "white"
+    "bg": "FF1E5A",
+    "fg": "white",
+    "logo": "angular"
   },
   "ansible": {
     "label": "Ansible",
@@ -49,9 +49,9 @@
   },
   "arduino": {
     "label": "Arduino",
-    "bg": "00878F",
-    "logo": "arduino",
-    "fg": "white"
+    "bg": "00979D",
+    "fg": "white",
+    "logo": "arduino"
   },
   "astro": {
     "label": "Astro",
@@ -91,15 +91,15 @@
   },
   "blender": {
     "label": "Blender",
-    "bg": "E87D0D",
-    "logo": "blender",
-    "fg": "black"
+    "bg": "F5792A",
+    "fg": "white",
+    "logo": "blender"
   },
   "bootstrap": {
     "label": "Bootstrap",
     "bg": "7952B3",
-    "logo": "bootstrap",
-    "fg": "white"
+    "fg": "white",
+    "logo": "bootstrap"
   },
   "bun": {
     "label": "Bun",
@@ -132,9 +132,9 @@
     "fg": "white"
   },
   "css": {
-    "label": "CSS",
-    "bg": "663399",
-    "logo": "css",
+    "label": "CSS3",
+    "bg": "1572B6",
+    "logo": "css3",
     "fg": "white"
   },
   "clojure": {
@@ -206,8 +206,8 @@
   "docker": {
     "label": "Docker",
     "bg": "2496ED",
-    "logo": "docker",
-    "fg": "white"
+    "fg": "white",
+    "logo": "docker"
   },
   "dotnet": {
     "label": ".NET",
@@ -223,9 +223,9 @@
   },
   "electron": {
     "label": "Electron",
-    "bg": "47848F",
-    "logo": "electron",
-    "fg": "white"
+    "bg": "191970",
+    "fg": "white",
+    "logo": "electron"
   },
   "elixir": {
     "label": "Elixir",
@@ -242,8 +242,8 @@
   "figma": {
     "label": "Figma",
     "bg": "F24E1E",
-    "logo": "figma",
-    "fg": "white"
+    "fg": "white",
+    "logo": "figma"
   },
   "firebase": {
     "label": "Firebase",
@@ -283,9 +283,9 @@
   },
   "git": {
     "label": "Git",
-    "bg": "F03C2E",
-    "logo": "git",
-    "fg": "white"
+    "bg": "F05032",
+    "fg": "white",
+    "logo": "git"
   },
   "gitlab": {
     "label": "GitLab",
@@ -296,8 +296,8 @@
   "github": {
     "label": "GitHub",
     "bg": "181717",
-    "logo": "github",
-    "fg": "white"
+    "fg": "white",
+    "logo": "github"
   },
   "githubactions": {
     "label": "GitHub Actions",
@@ -374,14 +374,14 @@
   "jquery": {
     "label": "jQuery",
     "bg": "0769AD",
-    "logo": "jquery",
-    "fg": "white"
+    "fg": "white",
+    "logo": "jquery"
   },
   "javascript": {
     "label": "JavaScript",
-    "bg": "F7DF1E",
-    "logo": "javascript",
-    "fg": "black"
+    "bg": "323330",
+    "fg": "F7DF1E",
+    "logo": "javascript"
   },
   "jenkins": {
     "label": "Jenkins",
@@ -476,8 +476,8 @@
   "mongodb": {
     "label": "MongoDB",
     "bg": "47A248",
-    "logo": "mongodb",
-    "fg": "white"
+    "fg": "white",
+    "logo": "mongodb"
   },
   "mysql": {
     "label": "MySQL",
@@ -494,20 +494,20 @@
   "nestjs": {
     "label": "NestJS",
     "bg": "E0234E",
-    "logo": "nestjs",
-    "fg": "white"
+    "fg": "white",
+    "logo": "nestjs"
   },
   "netlify": {
     "label": "Netlify",
-    "bg": "00C7B7",
-    "logo": "netlify",
-    "fg": "black"
+    "bg": "000000",
+    "fg": "00C7B7",
+    "logo": "netlify"
   },
   "nginx": {
     "label": "NGINX",
     "bg": "009639",
-    "logo": "nginx",
-    "fg": "white"
+    "fg": "white",
+    "logo": "nginx"
   },
   "nim": {
     "label": "Nim",
@@ -518,8 +518,8 @@
   "notion": {
     "label": "Notion",
     "bg": "000000",
-    "logo": "notion",
-    "fg": "white"
+    "fg": "white",
+    "logo": "notion"
   },
   "npm": {
     "label": "npm",
@@ -588,28 +588,28 @@
     "fg": "white"
   },
   "pnpm": {
-    "label": "pnpm",
-    "bg": "F69220",
-    "logo": "pnpm",
-    "fg": "black"
+    "label": "PNPM",
+    "bg": "222222",
+    "fg": "F69220",
+    "logo": "pnpm"
   },
   "postgresql": {
     "label": "PostgreSQL",
-    "bg": "4169E1",
+    "bg": "336791",
     "logo": "postgresql",
     "fg": "white"
   },
   "postman": {
     "label": "Postman",
     "bg": "FF6C37",
-    "logo": "postman",
-    "fg": "black"
+    "fg": "white",
+    "logo": "postman"
   },
   "prisma": {
     "label": "Prisma",
     "bg": "2D3748",
-    "logo": "prisma",
-    "fg": "white"
+    "fg": "white",
+    "logo": "prisma"
   },
   "prometheus": {
     "label": "Prometheus",
@@ -758,8 +758,8 @@
   "sass": {
     "label": "Sass",
     "bg": "CC6699",
-    "logo": "sass",
-    "fg": "black"
+    "fg": "white",
+    "logo": "sass"
   },
   "scala": {
     "label": "Scala",
@@ -852,10 +852,10 @@
     "fg": "white"
   },
   "tailwindcss": {
-    "label": "Tailwind CSS",
+    "label": "TailwindCSS",
     "bg": "06B6D4",
-    "logo": "tailwindcss",
-    "fg": "black"
+    "fg": "white",
+    "logo": "tailwindcss"
   },
   "tauri": {
     "label": "Tauri",
@@ -878,8 +878,8 @@
   "typescript": {
     "label": "TypeScript",
     "bg": "3178C6",
-    "logo": "typescript",
-    "fg": "white"
+    "fg": "white",
+    "logo": "typescript"
   },
   "ubuntu": {
     "label": "Ubuntu",
@@ -926,8 +926,8 @@
   "vercel": {
     "label": "Vercel",
     "bg": "000000",
-    "logo": "vercel",
-    "fg": "white"
+    "fg": "white",
+    "logo": "vercel"
   },
   "vite": {
     "label": "Vite",
@@ -1006,5 +1006,185 @@
     "bg": "F7A41D",
     "logo": "zig",
     "fg": "black"
+  },
+  "aws": {
+    "label": "AWS",
+    "bg": "FF9900",
+    "fg": "white",
+    "logo": "amazonaws"
+  },
+  "expressjs": {
+    "label": "Express.js",
+    "bg": "303030",
+    "fg": "white",
+    "logo": "express"
+  },
+  "gcp": {
+    "label": "Google Cloud",
+    "logo": "googlecloud",
+    "bg": "4285F4",
+    "fg": "white"
+  },
+  "html": {
+    "label": "HTML5",
+    "logo": "html5",
+    "bg": "E34F26",
+    "fg": "white"
+  },
+  "java": {
+    "label": "Java",
+    "bg": "ED8B00",
+    "fg": "white",
+    "logo": "java"
+  },
+  "nextjs": {
+    "label": "Next.js",
+    "logo": "nextdotjs",
+    "bg": "000000",
+    "fg": "white"
+  },
+  "nodejs": {
+    "label": "Node.js",
+    "bg": "339933",
+    "fg": "white",
+    "logo": "nodedotjs"
+  },
+  "photoshop": {
+    "label": "Adobe Photoshop",
+    "bg": "31A8FF",
+    "fg": "white",
+    "logo": "adobephotoshop"
+  },
+  "postgres": {
+    "label": "Postgres",
+    "bg": "316192",
+    "fg": "white",
+    "logo": "postgresql"
+  },
+  "js": {
+    "label": "JavaScript",
+    "logo": "javascript",
+    "bg": "F7DF1E",
+    "fg": "black"
+  },
+  "ts": {
+    "label": "TypeScript",
+    "logo": "typescript",
+    "bg": "3178C6",
+    "fg": "white"
+  },
+  "vue": {
+    "label": "Vue.js",
+    "logo": "vuedotjs",
+    "bg": "000000",
+    "fg": "white"
+  },
+  "nuxt": {
+    "label": "Nuxt.js",
+    "logo": "nuxtdotjs",
+    "bg": "000000",
+    "fg": "white"
+  },
+  "express": {
+    "label": "Express",
+    "logo": "express",
+    "bg": "303030",
+    "fg": "white"
+  },
+  "nodemon": {
+    "label": "Nodemon",
+    "bg": "76D04B",
+    "fg": "white",
+    "logo": "nodemon"
+  },
+  "socketio": {
+    "label": "Socket.io",
+    "bg": "010101",
+    "fg": "white",
+    "logo": "socketdotio"
+  },
+  "adobexd": {
+    "label": "Adobe XD",
+    "bg": "470137",
+    "fg": "white",
+    "logo": "adobexd"
+  },
+  "framer": {
+    "label": "Framer",
+    "bg": "000000",
+    "fg": "white",
+    "logo": "framer"
+  },
+  "canva": {
+    "label": "Canva",
+    "bg": "00C4CC",
+    "fg": "white",
+    "logo": "canva"
+  },
+  "windows": {
+    "label": "Windows",
+    "logo": "windows11",
+    "bg": "000000",
+    "fg": "white"
+  },
+  "linkedin": {
+    "label": "LinkedIn",
+    "logo": "linkedin",
+    "bg": "000000",
+    "fg": "white"
+  },
+  "html5": {
+    "label": "HTML5",
+    "bg": "E34F26",
+    "fg": "white",
+    "logo": "html5"
+  },
+  "css3": {
+    "label": "CSS3",
+    "bg": "1572B6",
+    "fg": "white",
+    "logo": "css3"
+  },
+  "rxjs": {
+    "label": "RxJS",
+    "bg": "B7178C",
+    "fg": "white",
+    "logo": "reactivex"
+  },
+  "chartjs": {
+    "label": "Chart.js",
+    "bg": "FF6384",
+    "fg": "white",
+    "logo": "chartdotjs"
+  },
+  "ejs": {
+    "label": "EJS",
+    "bg": "B4CA65",
+    "fg": "black",
+    "logo": "ejs"
+  },
+  "googlecloud": {
+    "label": "GoogleCloud",
+    "bg": "4285F4",
+    "fg": "white",
+    "logo": "googlecloud"
+  },
+  "ffmpeg": {
+    "label": "FFmpeg",
+    "bg": "000000",
+    "fg": "007808",
+    "logo": "ffmpeg"
+  },
+  "eslint": {
+    "label": "ESLint",
+    "bg": "4B32C3",
+    "fg": "white",
+    "logo": "eslint"
+  },
+  "prettier": {
+    "label": "Prettier",
+    "bg": "F7B93E",
+    "fg": "black",
+    "logo": "prettier"
   }
 }

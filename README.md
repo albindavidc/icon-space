@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://icon-space.vercel.app">
-    <img align="center" src="https://icon-space.vercel.app/icons?i=ts,react,next,tailwind,x,whatsapp,linkedin,aws,linux,git,github,figma&theme=dark&perline=6"/>
+    <img align="center" src="https://icon-space.vercel.app/icons?i=typescript,javascript,jquery,tailwindcss,html5,css3,bootstrap,angular,rxjs,sass,chartjs,ejs,electron,expressjs,nestjs,pnpm,mongodb,postgres,prisma,nodejs,nodemon,java,socketio,postman,aws,googlecloud,netlify,vercel,nginx,github,ffmpeg,notion,eslint,docker,prettier,git,photoshop,canva,figma,framer,adobexd,blender,arduino,react,linux&theme=dark&perline=15&size=48"/>
   </a>
 </p>
 
